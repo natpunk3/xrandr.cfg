@@ -1,0 +1,15 @@
+#!/usr/bin/perl
+
+my $needle = scalar @ARGV?
+	qr/$ARGV[0]/ : qr/./;
+my $i = 0;
+
+for (qx{ip link}) {
+	next unless m/^\d+: ([^l][^:]+):/;
+	my $ix=$1;
+	if ($ix =~ $needle) {
+		print $ix, $/;
+		$i++;
+	}
+}
+exit($i == 0);

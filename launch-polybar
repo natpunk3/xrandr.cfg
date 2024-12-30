@@ -1,0 +1,30 @@
+#!/bin/bash
+
+launch_bar() {
+	local eth=${1}; shift
+	local wifi=${1}; shift
+	local llog="${log}.${1}"
+
+	mv -f "${llog}" "${llog}.old"
+	echo "IFACE_ETH=${eth} IFACE_WLAN=${wifi} polybar $1" >>"${llog}"
+	IFACE_ETH=${eth} IFACE_WLAN=${wifi} polybar $1 >>"${llog}" 2>&1 &
+}
+
+tmp=${TMP-~/tmp}
+[[ -d ${tmp} ]] || mkdir -p ${tmp}
+
+log=${tmp}/polybar.log
+
+killall -q polybar
+while pgrep -x polybar >/dev/null; do sleep 1; done
+
+# query for monitors, interfaces?
+eth=$(ifgrep ^en)
+wifi=$(ifgrep ^w)
+
+# xorg-mon-bypos.pl | while read mon idc; do
+# 	launch_bar "${eth}" "${wifi}" "${mon}"
+# 	sleep 0.5
+# done
+launch_bar "${eth}" "${wifi}" top
+launch_bar "${eth}" "${wifi}" bottom
