@@ -1,12 +1,14 @@
-# spotify-polybar
+# xrandr.cfg
 A polybar module to display the current song and control Spotify playback (with experimental ad-skipping).
 
-![preview](https://media.discordapp.net/attachments/785518379146281000/794366536625422346/unknown.png)
 
 ## Dependencies
 - `dbus`
 - `polybar`
 - `spotify`
+- `i3`
+- `xrandr`
+- `arch`
 
 ## Installation
 #### Clone the repo into `~/.config/polybar`:
@@ -55,3 +57,4 @@ exec = echo "<next song icon>"
 [module/spotify-previous]
 exec = echo "<previous song icon>"
 ```
+And thats the only hard part!
