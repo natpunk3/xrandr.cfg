@@ -1,0 +1,73 @@
+! vim:ft=xdefaults:
+/* builtin display */
+Xft.dpi: 162
+Xft.autohint: false
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintslight
+Xft.hinting: true
+Xft.antialias: true
+Xft.rgba: rgb
+Xcursor.size: 32
+
+#define awesome_bg   #050505
+#define awesome_fg   #948f9e
+#define dark_black   #181818
+#define high_black   #323232
+#define dark_red     #97323c
+#define high_red     #d2757e
+#define dark_green   #3c9732
+#define high_green   #7ed275
+#define dark_yellow  #978d32
+#define high_yellow  #d2c875
+#define dark_blue    #323c97
+#define high_blue    #757ed2
+#define dark_magenta #8d3297
+#define high_magenta #c875d2
+#define dark_cyan    #32978d
+#define high_cyan    #75d2c8
+#define dark_white   #b2b2b2
+#define high_white   #ffffff
+
+! --- special colors ---
+
+*background: awesome_bg
+*foreground: awesome_fg
+
+! --- standard colors ---
+
+! black
+*color0:   dark_black
+*color8:   high_black
+! red
+*color1:   dark_red
+*color9:   high_red
+! green
+*color2:   dark_green
+*color10:  high_green
+! yellow
+*color3:   dark_yellow
+*color11:  high_yellow
+! blue
+*color4:   dark_blue
+*color12:  high_blue
+! magenta
+*color5:   dark_magenta
+*color13:  high_magenta
+! cyan
+*color6:   dark_cyan
+*color14:  high_cyan
+! white
+*color7:   dark_white
+*color15:  high_white
+
+! URxvt Specials
+
+URxvt*background:   [95]awesome_bg
+URxvt*colorUL:      high_blue
+URxvt*colorIT:      dark_yellow
+URxvt*cursorColor:  dark_green
+URxvt*cursorColor2: high_green
+URxvt*font:         xft:SauceCodePro Nerd Font:size=12.0
+URxvt*loginShell: true
+
+! ------------------------------------------------------------------------------

@@ -1,0 +1,33 @@
+#!/bin/bash
+echo What is the current display?
+read d1
+
+echo And what is the second one you would want to connect?
+read d2
+echo Loading.. $d1 is the left of $d2
+
+ #join left
+ commands=$(xrandr --auto --output $d1 --left-of $d2)
+	
+ #all commands
+
+	#join right
+	#xrandr --auto --output $d1 --right-of $d2
+
+
+	# Join Left
+	#xrandr --auto --output $d1 --left of $d2
+
+	# Mirror
+	# xrandr --auto --output $d1 --same-as $d2
+cat << EOT
+__  ______      _    _   _ ____  ____  
+\ \/ /  _ \    / \  | \ | |  _ \|  _ \ 
+ \  /| |_) |  / _ \ |  \| | | | | |_) |
+ /  \|  _ <  / ___ \| |\  | |_| |  _ < 
+/_/\_\_| \_\/_/   \_\_| \_|____/|_| \_\
+                                       
+has now saved your ass
+by Natpunk3
+EOT
+$commands
